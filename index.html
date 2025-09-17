@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Etiquetas HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 15px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #3498db;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        .tag-explanation {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .tag-explanation h3 {
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .tag-explanation p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+
+        .demo {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 2px dashed #3498db;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .progress-demo {
+            margin: 20px 0;
+        }
+
+        .meter-demo {
+            margin: 20px 0;
+        }
+
+        details {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        mark {
+            background-color: #ffeb3b;
+            padding: 2px 4px;
+        }
+
+        .canvas-demo {
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        .new-tags {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+
+        .new-tags h2 {
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Guía Completa de Etiquetas HTML</h1>
+            <p class="subtitle">Aprende el propósito y uso de cada etiqueta con ejemplos prácticos</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#basicas">Etiquetas Básicas</a></li>
+                <li><a href="#nuevas">Etiquetas Nuevas</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#interactivas">Interactivas</a></li>
+            </ul>
+        </nav>
+
+        <section id="basicas" class="section">
+            <h2>🏗️ Etiquetas Básicas de HTML</h2>
+            
+            <div class="tag-explanation">
+                <h3>&lt;html&gt;</h3>
+                <p><strong>Propósito:</strong> Es el elemento raíz que contiene todo el contenido de la página web. Define que el documento es de tipo HTML.</p>
+                <div class="example">&lt;html lang="es"&gt;...todo el contenido...&lt;/html&gt;</div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;head&gt;</h3>
+                <p><strong>Propósito:</strong> Contiene metadatos sobre el documento que no se muestran directamente al usuario, como el título, enlaces a CSS, y información para motores de búsqueda.</p>
+                <div class="example">&lt;head&gt;
+  &lt;title&gt;Mi Página&lt;/title&gt;
+  &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;</div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;body&gt;</h3>
+                <p><strong>Propósito:</strong> Contiene todo el contenido visible de la página web, como texto, imágenes, enlaces, etc.</p>
+                <div class="example">&lt;body&gt;
+  &lt;h1&gt;Contenido visible aquí&lt;/h1&gt;
+&lt;/body&gt;</div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;h1&gt; hasta &lt;h6&gt;</h3>
+                <p><strong>Propósito:</strong> Define encabezados de diferentes niveles, siendo h1 el más importante y h6 el menos importante. Crean jerarquía en el contenido.</p>
+                <div class="example">&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;h3&gt;Subtítulo menor&lt;/h3&gt;</div>
+                <div class="demo">
+                    <h1>Título Principal (h1)</h1>
+                    <h2>Subtítulo (h2)</h2>
+                    <h3>Subtítulo menor (h3)</h3>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;p&gt;</h3>
+                <p><strong>Propósito:</strong> Define un párrafo de texto. Agrupa oraciones relacionadas y crea espacios entre bloques de texto.</p>
+                <div class="example">&lt;p&gt;Este es un párrafo de ejemplo que explica algo importante.&lt;/p&gt;</div>
+                <div class="demo">
+                    <p>Este es un párrafo de ejemplo que explica algo importante.</p>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;a&gt;</h3>
+                <p><strong>Propósito:</strong> Crea hipervínculos que permiten navegar a otras páginas, secciones o recursos. Es fundamental para la navegación web.</p>
+                <div class="example">&lt;a href="https://www.ejemplo.com"&gt;Visitar Ejemplo&lt;/a&gt;
+&lt;a href="#seccion"&gt;Ir a sección&lt;/a&gt;</div>
+                <div class="demo">
+                    <a href="https://www.google.com" target="_blank">Visitar Google</a> |
+                    <a href="#basicas">Ir a sección básicas</a>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;img&gt;</h3>
+                <p><strong>Propósito:</strong> Inserta imágenes en la página web. Es una etiqueta auto-cerrada que requiere el atributo src para especificar la ubicación de la imagen.</p>
+                <div class="example">&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="200"&gt;</div>
+                <div class="demo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14'%3EImagen de ejemplo%3C/text%3E%3C/svg%3E" alt="Imagen de ejemplo" style="border: 1px solid #ccc;">
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;ul&gt; y &lt;li&gt;</h3>
+                <p><strong>Propósito:</strong> &lt;ul&gt; crea listas no ordenadas (con viñetas) y &lt;li&gt; define cada elemento de la lista.</p>
+                <div class="example">&lt;ul&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+  &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ul&gt;</div>
+                <div class="demo">
+                    <ul>
+                        <li>Primer elemento</li>
+                        <li>Segundo elemento</li>
+                        <li>Tercer elemento</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;ol&gt; y &lt;li&gt;</h3>
+                <p><strong>Propósito:</strong> &lt;ol&gt; crea listas ordenadas (numeradas) y &lt;li&gt; define cada elemento. El orden importa.</p>
+                <div class="example">&lt;ol&gt;
+  &lt;li&gt;Paso 1&lt;/li&gt;
+  &lt;li&gt;Paso 2&lt;/li&gt;
+  &lt;li&gt;Paso 3&lt;/li&gt;
+&lt;/ol&gt;</div>
+                <div class="demo">
+                    <ol>
+                        <li>Paso 1</li>
+                        <li>Paso 2</li>
+                        <li>Paso 3</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</h3>
+                <p><strong>Propósito:</strong> Crean tablas para mostrar datos estructurados. &lt;tr&gt; define filas, &lt;th&gt; encabezados y &lt;td&gt; celdas de datos.</p>
+                <div class="example">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Juan&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</div>
+                <div class="demo">
+                    <table>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Ciudad</th>
+                        </tr>
+                        <tr>
+                            <td>Juan</td>
+                            <td>25</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>María</td>
+                            <td>30</td>
+                            <td>Barcelona</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="nuevas" class="section new-tags">
+            <h2>✨ 10 Etiquetas Nuevas e Interesantes</h2>
+
+            <div class="tag-explanation">
+                <h3>&lt;video&gt;</h3>
+                <p><strong>Propósito:</strong> Permite insertar y reproducir videos directamente en la página web sin necesidad de plugins externos como Flash.</p>
+                <div class="example">&lt;video controls width="300"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta video HTML5.
+&lt;/video&gt;</div>
+                <div class="demo">
+                    <video controls width="300" height="200" style="background: #000;">
+                        <source src="data:video/mp4;base64," type="video/mp4">
+                        Tu navegador no soporta video HTML5. (Esta es una demo sin video real)
+                    </video>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;audio&gt;</h3>
+                <p><strong>Propósito:</strong> Permite insertar y reproducir archivos de audio en la página web con controles personalizables.</p>
+                <div class="example">&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mp3"&gt;
+  Tu navegador no soporta audio HTML5.
+&lt;/audio&gt;</div>
+                <div class="demo">
+                    <audio controls>
+                        <source src="data:audio/mp3;base64," type="audio/mp3">
+                        Tu navegador no soporta audio HTML5. (Esta es una demo sin audio real)
+                    </audio>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;canvas&gt;</h3>
+                <p><strong>Propósito:</strong> Crea un área de dibujo donde se pueden generar gráficos, animaciones y visualizaciones dinámicas usando JavaScript.</p>
+                <div class="example">&lt;canvas id="miCanvas" width="300" height="150"&gt;
+  Tu navegador no soporta canvas.
+&lt;/canvas&gt;</div>
+                <div class="demo">
+                    <canvas id="demoCanvas" width="300" height="150" class="canvas-demo">
+                        Tu navegador no soporta canvas.
+                    </canvas>
+                    <script>
+                        const canvas = document.getElementById('demoCanvas');
+                        const ctx = canvas.getContext('2d');
+                        // Dibujar un círculo
+                        ctx.beginPath();
+                        ctx.arc(75, 75, 50, 0, 2 * Math.PI);
+                        ctx.fillStyle = '#3498db';
+                        ctx.fill();
+                        // Dibujar un rectángulo
+                        ctx.fillStyle = '#e74c3c';
+                        ctx.fillRect(150, 25, 100, 100);
+                        // Texto
+                        ctx.fillStyle = '#2c3e50';
+                        ctx.font = '16px Arial';
+                        ctx.fillText('Canvas Demo', 10, 140);
+                    </script>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;figure&gt; y &lt;figcaption&gt;</h3>
+                <p><strong>Propósito:</strong> &lt;figure&gt; agrupa contenido multimedia y &lt;figcaption&gt; proporciona una descripción o título para ese contenido.</p>
+                <div class="example">&lt;figure&gt;
+  &lt;img src="grafico.jpg" alt="Gráfico de ventas"&gt;
+  &lt;figcaption&gt;Gráfico de ventas del Q1 2024&lt;/figcaption&gt;
+&lt;/figure&gt;</div>
+                <div class="demo">
+                    <figure>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='150' viewBox='0 0 250 150'%3E%3Crect width='250' height='150' fill='%23ecf0f1'/%3E%3Cline x1='20' y1='130' x2='230' y2='130' stroke='%232c3e50' stroke-width='2'/%3E%3Cline x1='20' y1='130' x2='20' y2='20' stroke='%232c3e50' stroke-width='2'/%3E%3Cpolyline points='20,120 70,80 120,60 170,40 220,30' stroke='%233498db' stroke-width='3' fill='none'/%3E%3Ctext x='125' y='145' text-anchor='middle' font-size='12'%3EGráfico de ejemplo%3C/text%3E%3C/svg%3E" alt="Gráfico de ejemplo">
+                        <figcaption>Gráfico de ventas del Q1 2024 - Tendencia positiva</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;progress&gt;</h3>
+                <p><strong>Propósito:</strong> Muestra el progreso de una tarea, como la descarga de un archivo o el completado de un formulario.</p>
+                <div class="example">&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;</div>
+                <div class="demo">
+                    <div class="progress-demo">
+                        <p>Progreso de descarga:</p>
+                        <progress value="70" max="100">70%</progress> 70%
+                        <br><br>
+                        <p>Progreso de instalación:</p>
+                        <progress value="45" max="100">45%</progress> 45%
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;meter&gt;</h3>
+                <p><strong>Propósito:</strong> Representa un valor escalar dentro de un rango conocido, como espacio en disco, temperatura, o puntuación.</p>
+                <div class="example">&lt;meter value="8" min="0" max="10"&gt;8 de 10&lt;/meter&gt;</div>
+                <div class="demo">
+                    <div class="meter-demo">
+                        <p>Uso de disco:</p>
+                        <meter value="6" min="0" max="10">6 de 10</meter> 60% usado
+                        <br><br>
+                        <p>Calificación:</p>
+                        <meter value="8.5" min="0" max="10">8.5 de 10</meter> 8.5/10
+                    </div>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;details&gt; y &lt;summary&gt;</h3>
+                <p><strong>Propósito:</strong> Crean contenido expandible/colapsable. &lt;summary&gt; es el título clickeable y &lt;details&gt; contiene el contenido que se puede mostrar u ocultar.</p>
+                <div class="example">&lt;details&gt;
+  &lt;summary&gt;Más información&lt;/summary&gt;
+  &lt;p&gt;Aquí está el contenido adicional...&lt;/p&gt;
+&lt;/details&gt;</div>
+                <div class="demo">
+                    <details>
+                        <summary>🔍 Ver más detalles sobre HTML</summary>
+                        <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Fue creado por Tim Berners-Lee en 1990 y ha evolucionado mucho desde entonces.</p>
+                        <p>Las etiquetas HTML definen la estructura y el contenido de las páginas web, mientras que CSS controla la presentación.</p>
+                    </details>
+                    <details>
+                        <summary>📊 Estadísticas interesantes</summary>
+                        <p>Más del 90% de los sitios web utilizan HTML como base, y HTML5 es compatible con todos los navegadores modernos.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;mark&gt;</h3>
+                <p><strong>Propósito:</strong> Resalta o marca texto importante, similar a usar un marcador fluorescente en un documento físico.</p>
+                <div class="example">&lt;p&gt;El &lt;mark&gt;texto importante&lt;/mark&gt; se destaca del resto.&lt;/p&gt;</div>
+                <div class="demo">
+                    <p>En este párrafo, la <mark>información crucial</mark> está marcada para llamar la atención. También podemos marcar <mark>fechas importantes</mark> como el 15 de marzo de 2024.</p>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;time&gt;</h3>
+                <p><strong>Propósito:</strong> Representa fechas y horas de manera semánticamente correcta, ayudando a los motores de búsqueda y tecnologías asistivas.</p>
+                <div class="example">&lt;time datetime="2024-03-15"&gt;15 de marzo de 2024&lt;/time&gt;
+&lt;time datetime="14:30"&gt;2:30 PM&lt;/time&gt;</div>
+                <div class="demo">
+                    <p>Este artículo fue publicado el <time datetime="2024-03-15">15 de marzo de 2024</time> a las <time datetime="14:30">2:30 PM</time>.</p>
+                    <p>La reunión está programada para el <time datetime="2024-12-25">25 de diciembre</time>.</p>
+                </div>
+            </div>
+
+            <div class="tag-explanation">
+                <h3>&lt;abbr&gt;</h3>
+                <p><strong>Propósito:</strong> Define abreviaciones o acrónimos, proporcionando su significado completo cuando el usuario pasa el mouse sobre ellos.</p>
+                <div class="example">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</div>
+                <div class="demo">
+                    <p>Estamos aprendiendo <abbr title="HyperText Markup Language">HTML</abbr> y <abbr title="Cascading Style Sheets">CSS</abbr> para crear páginas web.</p>
+                    <p>La <abbr title="Organización Mundial de la Salud">OMS</abbr> recomienda hacer ejercicio regularmente.</p>
+                    <small>💡 Pasa el mouse sobre las abreviaciones para ver su significado completo</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="multimedia" class="section">
+            <h2>🎵 Ejemplos Multimedia</h2>
+            <p>Las etiquetas multimedia como &lt;video&gt;, &lt;audio&gt; y &lt;canvas&gt; han revolucionado la web al permitir contenido interactivo sin plugins externos.</p>
+            
+            <div class="tag-explanation">
+                <h3>Ventajas del HTML5 Multimedia:</h3>
+                <ul>
+                    <li><strong>Compatibilidad:</strong> Funciona en todos los navegadores modernos</li>
+                    <li><strong>Rendimiento:</strong> Mejor optimización que los plugins</li>
+                    <li><strong>Accesibilidad:</strong> Mejor soporte para tecnologías asistivas</li>
+                    <li><strong>Interactividad:</strong> Fácil integración con JavaScript</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interactivas" class="section">
+            <h2>⚡ Elementos Interactivos</h2>
+            <p>Las etiquetas como &lt;details&gt;, &lt;progress&gt; y &lt;meter&gt; mejoran la experiencia del usuario al proporcionar interactividad y retroalimentación visual.</p>
+            
+            <details>
+                <summary>🎯 Consejos para usar etiquetas interactivas</summary>
+                <ul>
+                    <li>Usa &lt;progress&gt; para mostrar el avance de tareas</li>
+                    <li>Implementa &lt;details&gt; para FAQs y contenido expandible</li>
+                    <li>Utiliza &lt;meter&gt; para mostrar rangos de valores</li>
+                    <li>Combina con JavaScript para mayor interactividad</li>
+                </ul>
+            </details>
+        </section>
+
+        <footer>
+            <h2>🎓 ¡Proyecto Completado!</h2>
+            <p>Has aprendido sobre <mark>etiquetas básicas</mark> y <mark>10 etiquetas nuevas</mark> de HTML.</p>
+            <p>Ahora puedes subir este proyecto a <abbr title="Sistema de control de versiones">GitHub</abbr> y activar GitHub Pages.</p>
+            <p><small>Creado con ❤️ para aprender HTML • <time datetime="2024">2024</time></small></p>
+        </footer>
+    </div>
+</body>
+</html>
