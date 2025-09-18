@@ -302,9 +302,10 @@
             <div class="tag-explanation">
                 <h3>&lt;img&gt;</h3>
                 <p><strong>Propósito:</strong> Inserta imágenes en la página web. Es una etiqueta auto-cerrada que requiere el atributo src para especificar la ubicación de la imagen.</p>
-                <div class="example">&lt;img src="imagen.jpg" alt="Descripción de la imagen" width="200"&gt;</div>
+                <div class="example">&lt;img src="https://blog.ticketmaster.es/wp-content/uploads/2023/05/mejores-canciones-morat-1.jpg" alt="Banda Morat" width="300"&gt;</div>
                 <div class="demo">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='%23ddd'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14'%3EImagen de ejemplo%3C/text%3E%3C/svg%3E" alt="Imagen de ejemplo" style="border: 1px solid #ccc;">
+                    <img src="https://blog.ticketmaster.es/wp-content/uploads/2023/05/mejores-canciones-morat-1.jpg" alt="Banda Morat" width="300" style="border: 1px solid #ccc; border-radius: 8px;">
+                    <p><small>💡 Ejemplo real usando una URL</small></p>
                 </div>
             </div>
 
@@ -386,12 +387,21 @@
                 <div class="example">&lt;video controls width="300"&gt;
   &lt;source src="video.mp4" type="video/mp4"&gt;
   Tu navegador no soporta video HTML5.
-&lt;/video&gt;</div>
+&lt;/video&gt;
+
+&lt;!-- Para videos de YouTube usamos iframe --&gt;
+&lt;iframe width="300" height="200" 
+        src="https://www.youtube.com/embed/s5ujpIdHpqk" 
+        frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;</div>
                 <div class="demo">
-                    <video controls width="300" height="200" style="background: #000;">
-                        <source src="data:video/mp4;base64," type="video/mp4">
-                        Tu navegador no soporta video HTML5. (Esta es una demo sin video real)
-                    </video>
+                    <p><strong>Ejemplo con video de YouTube:</strong></p>
+                    <iframe width="300" height="200" 
+                            src="https://www.youtube.com/embed/s5ujpIdHpqk" 
+                            frameborder="0" allowfullscreen
+                            style="border-radius: 8px;">
+                    </iframe>
+                    <p><small>💡 Video embebido desde YouTube usando &lt;iframe&gt;</small></p>
                 </div>
             </div>
 
@@ -401,12 +411,21 @@
                 <div class="example">&lt;audio controls&gt;
   &lt;source src="audio.mp3" type="audio/mp3"&gt;
   Tu navegador no soporta audio HTML5.
-&lt;/audio&gt;</div>
+&lt;/audio&gt;
+
+&lt;!-- Para audio de YouTube también usamos iframe --&gt;
+&lt;iframe width="300" height="150" 
+        src="https://www.youtube.com/embed/TYrcdhots80" 
+        frameborder="0" allowfullscreen&gt;
+&lt;/iframe&gt;</div>
                 <div class="demo">
-                    <audio controls>
-                        <source src="data:audio/mp3;base64," type="audio/mp3">
-                        Tu navegador no soporta audio HTML5. (Esta es una demo sin audio real)
-                    </audio>
+                    <p><strong>Ejemplo con audio de YouTube:</strong></p>
+                    <iframe width="300" height="150" 
+                            src="https://www.youtube.com/embed/TYrcdhots80" 
+                            frameborder="0" allowfullscreen
+                            style="border-radius: 8px;">
+                    </iframe>
+                    <p><small>💡 Audio embebido desde YouTube - También se usa &lt;iframe&gt; para contenido de YouTube</small></p>
                 </div>
             </div>
 
@@ -414,11 +433,11 @@
                 <h3>&lt;canvas&gt;</h3>
                 <p><strong>Propósito:</strong> Crea un área de dibujo donde se pueden generar gráficos, animaciones y visualizaciones dinámicas usando JavaScript.</p>
                 <div class="example">&lt;canvas id="miCanvas" width="300" height="150"&gt;
-  Tu navegador no soporta canvas.
+  
 &lt;/canvas&gt;</div>
                 <div class="demo">
                     <canvas id="demoCanvas" width="300" height="150" class="canvas-demo">
-                        Tu navegador no soporta canvas.
+                        
                     </canvas>
                     <script>
                         const canvas = document.getElementById('demoCanvas');
@@ -531,7 +550,7 @@
                 <div class="demo">
                     <p>Estamos aprendiendo <abbr title="HyperText Markup Language">HTML</abbr> y <abbr title="Cascading Style Sheets">CSS</abbr> para crear páginas web.</p>
                     <p>La <abbr title="Organización Mundial de la Salud">OMS</abbr> recomienda hacer ejercicio regularmente.</p>
-                    <small>💡 Pasa el mouse sobre las abreviaciones para ver su significado completo</small>
+
                 </div>
             </div>
         </section>
@@ -567,9 +586,10 @@
         </section>
 
         <footer>
-            
+            <h2>🎓 ¡Proyecto Completado!</h2>
             <p>Has aprendido sobre <mark>etiquetas básicas</mark> y <mark>10 etiquetas nuevas</mark> de HTML.</p>
-            
+            <p>Ahora puedes subir este proyecto a <abbr title="Sistema de control de versiones">GitHub</abbr> y activar GitHub Pages.</p>
+            <p><small>Creado con ❤️ para aprender HTML • <time datetime="2024">2024</time></small></p>
         </footer>
     </div>
 </body>
